@@ -1,0 +1,107 @@
+/* Sidebar Styles */
+.sidebar {
+    position: absolute;           
+    top: 23%;
+                       
+  backdrop-filter: blur(10px);                
+  -webkit-backdrop-filter: blur(10px);        
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+  }
+  
+  
+ 
+  .sidebarItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 25px;
+  }
+  
+  .sidebarTitle {
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 90%;
+    border-top: 2px solid #eee;
+    border-bottom: 2px solid #eee;
+    text-align: center;
+    font-family: "Varela Round", sans-serif;
+    font-size: 14px;
+    color: #333;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  
+  .sidebarImg {
+    margin-top: 10px;
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sidebarItem > p {
+    padding: 20px;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  .sidebarList {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .sidebarListItem {
+    width: 45%;
+    margin: 10px 5px;
+    text-align: center;
+    font-size: 14px;
+    color: #f1eaea;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .sidebarListItem:hover {
+   
+    text-decoration: underline;
+  }
+  
+  .sidebarSocial {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .link {
+    font-size: large;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .sidebarIcon {
+    font-size: 20px;
+    color: #555;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .sidebarIcon:hover {
+    color: #0077ff;
+  }
+  

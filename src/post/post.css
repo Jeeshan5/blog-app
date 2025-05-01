@@ -1,0 +1,95 @@
+/* Right Cards Container */
+.rightCardsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row on large screens */
+  gap: 20px;
+  padding: 20px;
+  max-width: calc(100% - 300px); /* Adjust if sidebar is 250px + margin */
+  margin-left: auto; /* Pushes container to the right side */
+}
+
+/* Floating Card Styles (unchanged from previous version) */
+.floatingCard {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+.floatingCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.cardImageContainer {
+  position: relative;
+  width: 100%;
+  height: 230px;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.floatingCard:hover .cardOverlay {
+  opacity: 1;
+}
+
+.cardLink {
+  color: #fff;
+  font-size: 12px;
+  font-family: sans-serif;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 25px;
+}
+
+.cardContent {
+  padding: 15px;
+  text-align: center;
+  color: #fff;
+}
+
+.cardContent h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.cardContent p {
+  font-size: 14px;
+  color: #ddd;
+  margin-top: 10px;
+}
+
+/* 🔁 Responsive Adjustments */
+@media (max-width: 1024px) {
+  .rightCardsContainer {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row on medium screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .rightCardsContainer {
+    grid-template-columns: 1fr; /* 1 card per row on small screens */
+  }
+}
