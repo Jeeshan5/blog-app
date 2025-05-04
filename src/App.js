@@ -11,7 +11,7 @@ function App() {
       <Topbar />
       <Home />
       <div className="mainContent">
-        <Sidebar />
+        {/* <Sidebar /> */}
         <Post />
       </div>
     </>

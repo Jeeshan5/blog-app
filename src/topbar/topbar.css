@@ -1,74 +1,163 @@
 .top {
-    width: 100%;
-    height: 50px;
-    background-color: grey;
-    position: sticky;
-    top: 0;
-    display: flex;
-    align-items: center;
-    z-index: 999;
-    font-family: "Josefin Sans", sans-serif;
-  }
-  
-  .topLeft,
-  .topRight {
-    flex: 3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
- 
+  width: 100%;
+  height: 60px;
+  background-color: #1f1f1f; /* darker theme */
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 999;
+  font-family: "Josefin Sans", sans-serif;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
 
-  
+/* Flex children layout */
+.topLeft,
+.topCenter,
+.topRight {
+  display: flex;
+  align-items: center;
+}
+
+.topLeft,
+.topRight {
+  flex: 2;
+  justify-content: center;
+}
+
+.topCenter {
+  flex: 6;
+  justify-content: center;
+}
+
+/* Social or utility icons */
+.topIcon {
+  font-size: 22px;
+  margin-right: 15px;
+  color: #aaa;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.topIcon:hover {
+  color: #ffffff;
+  transform: scale(1.2);
+}
+
+/* Navigation list */
+.topList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.topListItem {
+  margin: 0 15px;
+  font-size: 17px;
+  font-weight: 400;
+  color: #ddd;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.topListItem:hover {
+  color: #00bcd4;
+  font-size: 18.5px;
+}
+
+/* User profile image */
+.topImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-left: 15px;
+  cursor: pointer;
+  border: 2px solid #333;
+}
+
+/* Search icon */
+.topSearchIcon {
+  font-size: 20px;
+  color: #ccc;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: color 0.3s ease;
+}
+
+.topSearchIcon:hover {
+  color: #00bcd4;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .topListItem {
+    font-size: 15px;
+    margin: 0 10px;
+  }
+
   .topIcon {
-    font-size: 20px;
-    margin-right: 10px;
-    color: #444;
-    cursor: pointer;
-  }
-  .topIcon:hover {
-    color: #111;          
-    transform: scale(1.2);
-  }
-  
-  .topCenter {
-    flex: 6;
-  }
-  
-  .topList {
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  
-  .topListItem {
-    margin-right: 20px;
     font-size: 18px;
-    font-weight: 300;
-    cursor: pointer;
   }
-  
-  .topListItem:hover {
-    color: rgb(10, 10, 10);
-    font-size: 23px;
-  }
-  .topListItem {
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .topImg {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 15px;
-    cursor: pointer;
-  }
-  
+
   .topSearchIcon {
-    font-size: 18px;
-    color: #090909;
-    cursor: pointer;
+    font-size: 16px;
   }
+}
+
+@media (max-width: 500px) {
+  .top {
+    flex-direction: row;
+    height: auto;
+    padding: 10px;
+  }
+
+  .topLeft,
+  .topCenter,
+  .topRight {
+    flex: 1;
+    justify-content: center;
+    margin: 5px 0;
+  }
+
+  .topList {
+    flex-wrap: re;
+    gap: 10px;
+  }
+
+  .topListItem {
+    margin: 5px;
+    font-size: 14px;
+  }
+}
+.hamburgerIcon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: none; /* initially hidden */
+}
+
+@media (max-width: 768px) {
+  .hamburgerIcon {
+    display: block; /* only show on smaller screens */
+  }
+
+  .topCenter {
+    display: none;
+  }
+
+  .topList.show {
+    display: flex;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+  }
+}
+

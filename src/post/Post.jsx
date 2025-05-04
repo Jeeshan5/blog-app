@@ -19,27 +19,29 @@ export default function Post() {
       desc: "Style your React apps like a pro with Flexbox and Grid.",
       img: sampleImage,
     },
+    {
+      title: "Advanced Topics",
+      desc: "Dive into context, reducers, and performance optimization.",
+      img: sampleImage,
+    },
   ];
 
   return (
-    <div className="rightCardsContainer">
-      {posts.map((post, index) => (
-        <div className="floatingCard" key={index}>
-          <div className="cardImageContainer">
-            <img src={post.img} alt={post.title} className="cardImage" />
-            <div className="cardOverlay">
-              <a href="/" className="cardLink">
-                View More
-              </a>
+    <div className="postOverlayContainer">
+      <div className="rightCardsContainer">
+        {posts.map((post, index) => (
+          <div className="floatingCard" key={index}>
+            <div className="cardImageContainer">
+              <img src={post.img} alt={post.title} className="cardImage" />
+            </div>
+            <div className="cardContent">
+              <h4>{post.title}</h4>
+              <p>{post.desc}</p>
+              <a href="/" className="viewMoreBtn">View More</a>
             </div>
           </div>
-          <div className="cardContent">
-            <h4>{post.title}</h4>
-            <p>{post.desc}</p>
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }
-
