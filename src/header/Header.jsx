@@ -1,11 +1,17 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import "./header.css";
 import heroBackground from "../assets/hero-background.jpg";
 
 export default function Header() {
   const [text, setText] = useState(""); // State to store typed text
   const [index, setIndex] = useState(0); // Index for the word we're typing
-  const words = ["Explore Ideas", "Write Stories", "Share Knowledge", "Inspire Others"];
+  
+  // Memoize the words array so it doesn't change between renders
+  const words = useMemo(() => 
+    ["Explore Ideas", "Write Stories", "Share Knowledge", "Inspire Others"], 
+    []
+  );
+  
   const typeSpeed = 100;
   const deleteSpeed = 50;
   const delaySpeed = 1000;
@@ -50,7 +56,7 @@ export default function Header() {
       clearInterval(typeInterval);
       clearInterval(deleteInterval);
     };
-  }, [index]); // Only depend on index, not words (since words is constant)
+  }, [index, words]); // Now includes words in dependencies
 
   return (
     <div className="header">
@@ -64,12 +70,13 @@ export default function Header() {
         </div>
         
         {/* Fixed text below the auto-typing text */}
-        <div className="headerSubtitle">
-          <span>Your ultimate platform for creativity and expression.</span>
-        </div>
+        <p className="headerSubtitle">
+          Your ultimate platform for creativity and expression.
+          Join our community of writers and thinkers today.
+          Your ultimate platform for creativity and expression.
+          Join our community of writers and thinkers today.
+        </p>
       </div>
     </div>
-   
-    
   );
 }

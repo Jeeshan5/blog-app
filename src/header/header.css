@@ -12,9 +12,9 @@
   
   .headerTitleLg {
     position: absolute;
-    top: 10%; /* Adjusted from 0% to 10% to match the image shift */
+    top: 10%; 
     font-size: 100px;
-    z-index: 1; /* Ensure it's on top of the image */
+    z-index: 1; 
   }
   
   .headerImg {
@@ -46,11 +46,12 @@
   font-family: "Josefin Sans", sans-serif;
   text-align: center;
   line-height: 1.5;
-  margin-top: 30px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-  position: absolute; /* Fix the position of subtitle */
-  bottom: 20px; /* Keeps the subtitle at the bottom */
-  left: 50%;
-  transform: translateX(-50%); /* Centers the subtitle horizontally */
-  z-index: 3; /* Ensure it stays above the overlay */
-}
+  position: absolute;
+  margin-top: 300px;
+  width: 100%; 
+  left: 0;
+  transform: none; 
+  z-index: 3;
+  padding: 0 20px; 
+  box-sizing: border-box; }
