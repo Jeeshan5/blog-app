@@ -3,6 +3,7 @@ import "./topbar.css";
 import hamburgerIcon from "../assets/Hamburger_icon.svg.png";
 
 
+
 export default function Topbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -24,14 +25,14 @@ export default function Topbar() {
         <img src={hamburgerIcon} alt="Menu" className="hamburgerIcon" />
       </div>
 
-      <div className="topCenter">
-        <ul className={`topList ${menuOpen ? "show" : ""}`}>
-          <li className="topListItem">Home</li>
-          <li className="topListItem">About</li>
-          <li className="topListItem">Contact</li>
-          <li className="topListItem">Write</li>
-        </ul>
-      </div>
+      <div className={`topCenter ${menuOpen ? "show" : ""}`}>
+  <ul className={`topList ${menuOpen ? "show" : ""}`}>
+    <li className="topListItem">Home</li>
+    <li className="topListItem">About</li>
+    <li className="topListItem">Contact</li>
+    <li className="topListItem">Write</li>
+  </ul>
+</div>
 
       <div className="topRight">
         <img className="topImg" src="" alt="profile" />

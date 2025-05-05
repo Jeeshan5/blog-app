@@ -96,7 +96,7 @@ body {
 /* CARD SECTION BELOW HEADER */
 .postOverlayContainer {
   position: relative;
-  top: -150px; /* pulls up closer under "BLOG" */
+  top: -290px; /* pulls up closer under "BLOG" */
   z-index: 3;
   padding: 0 20px 40px 20px;
   width: 100%;

@@ -134,30 +134,61 @@
     font-size: 14px;
   }
 }
+/* Hamburger icon base style */
 .hamburgerIcon {
   width: 30px;
   height: 30px;
   cursor: pointer;
-  display: none; /* initially hidden */
+  display: none; /* Hidden on large screens */
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, top 0.3s ease, left 0.3s ease;
+  z-index: 1001;
 }
 
+/* Only show hamburger on small screens */
 @media (max-width: 768px) {
   .hamburgerIcon {
-    display: block; /* only show on smaller screens */
+    display: block;
   }
 
-  .topCenter {
+  /* Hide hamburger when menu is open */
+  .hamburgerIcon.hidden {
     display: none;
   }
-
-  .topList.show {
-    display: flex;
-    flex-direction: column;
-    background-color: #333;
+  .hamburgerIcon.moveDown {
     position: absolute;
-    top: 50px;
-    left: 0;
-    width: 100%;
+    top: 60px; /* just above or beside the menu */
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
+  .topCenter {
+    display: none; /* Hide topCenter on small screens */
+  }
+
+  /* Show topCenter container when menu is open */
+  .topCenter.show {
+    display: block;
+  }
+
+  .topCenter .topList.show {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color:transparent; /* slightly transparent dark background */
+    position: absolute;
+    top: 1px; /* align right under the topbar */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20%; /* or adjust as needed */
+    z-index: 1000;
+    padding: 10px 0;
+    border-radius: 8px;
+    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); */
+  }
+  
+
+
 
