@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./post.css";
 import sampleImage from "../assets/robot.jpg";
 
-export default function Post() {
+export default function Post({ searchTerm }) {
   const [selectedPost, setSelectedPost] = useState(null);
 
   const posts = [
@@ -32,8 +32,10 @@ export default function Post() {
     },
   ];
 
-  const handleViewMore = (post) => {
-    setSelectedPost(post);
+  const highlightMatch = (text) => {
+    if (!searchTerm) return text;
+    const regex = new RegExp(`(${searchTerm})`, "gi");
+    return text.replace(regex, '<span class="highlight">$1</span>');
   };
 
   const closeModal = () => {
@@ -43,27 +45,57 @@ export default function Post() {
   return (
     <div className="postOverlayContainer">
       <div className="rightCardsContainer">
-        {posts.map((post, index) => (
-          <div className="floatingCard" key={index}>
-            <div className="cardImageContainer">
-              <img src={post.img} alt={post.title} className="cardImage" />
+        {posts.map((post, index) => {
+          const matches =
+            searchTerm &&
+            (post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+              post.desc.toLowerCase().includes(searchTerm.toLowerCase()) ||
+              post.body.toLowerCase().includes(searchTerm.toLowerCase()));
+
+          return (
+            <div
+              className={`floatingCard ${matches ? "glow" : ""}`}
+              key={index}
+            >
+              <div className="cardImageContainer">
+                <img src={post.img} alt={post.title} className="cardImage" />
+              </div>
+              <div className="cardContent">
+                <h4
+                  dangerouslySetInnerHTML={{
+                    __html: highlightMatch(post.title),
+                  }}
+                />
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: highlightMatch(post.desc),
+                  }}
+                />
+                <button
+                  className="viewMoreBtn"
+                  onClick={() => setSelectedPost(post)}
+                >
+                  View More
+                </button>
+              </div>
             </div>
-            <div className="cardContent">
-              <h4>{post.title}</h4>
-              <p>{post.desc}</p>
-              <button className="viewMoreBtn" onClick={() => handleViewMore(post)}>View More</button>
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       {selectedPost && (
         <div className="modalOverlay" onClick={closeModal}>
           <div className="modalContent" onClick={(e) => e.stopPropagation()}>
             <h2>{selectedPost.title}</h2>
-            <img src={selectedPost.img} alt={selectedPost.title} className="modalImage" />
+            <img
+              src={selectedPost.img}
+              alt={selectedPost.title}
+              className="modalImage"
+            />
             <p>{selectedPost.body}</p>
-            <button onClick={closeModal} className="closeModalBtn">Close</button>
+            <button onClick={closeModal} className="closeModalBtn">
+              Close
+            </button>
           </div>
         </div>
       )}

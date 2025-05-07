@@ -236,3 +236,12 @@ body {
   cursor: pointer;
 }
 
+.highlight {
+  background-color: #ff00cc;
+  font-weight: bold;
+}
+
+.glow {
+  box-shadow: 0 0 10px 2px #ff00cc;
+  transition: box-shadow 0.3s ease;
+}

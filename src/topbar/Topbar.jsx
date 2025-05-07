@@ -2,8 +2,16 @@ import { useState } from "react";
 import "./topbar.css";
 import hamburgerIcon from "../assets/Hamburger_icon.svg.png";
 
-export default function Topbar() {
+export default function Topbar({ onSearchChange }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
+
+  const handleSearchChange = (e) => {
+    const value = e.target.value;
+    setSearchValue(value);
+    onSearchChange(value); // send input to App
+  };
 
   return (
     <div className="top">
@@ -28,8 +36,20 @@ export default function Topbar() {
       </div>
 
       <div className="topRight">
+        {showSearch && (
+          <input
+            type="text"
+            value={searchValue}
+            onChange={handleSearchChange}
+            placeholder="Search..."
+            className="searchInput"
+          />
+        )}
         <img className="topImg" src="" alt="profile" />
-        <i className="topSearchIcon fa-solid fa-magnifying-glass"></i>
+        <i
+          className="topSearchIcon fa-solid fa-magnifying-glass"
+          onClick={() => setShowSearch(!showSearch)}
+        ></i>
       </div>
     </div>
   );

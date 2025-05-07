@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Home from "./pages/home/Home";
 import Post from "./post/Post";
 import Sidebar from "./sidebar/Sidebar";
@@ -7,13 +7,15 @@ import Contact from "./contact/Contact";
 import "./App.css";
 
 function App() {
+  const [searchTerm, setSearchTerm] = useState("");
+
   return (
     <>
-      <Topbar />
+      <Topbar onSearchChange={setSearchTerm} />
       <Home />
       <div className="mainContent">
         {/* <Sidebar /> */}
-        <Post />
+        <Post searchTerm={searchTerm} />
         <Contact />
       </div>
     </>
