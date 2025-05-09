@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom"; // <-- Import Link from react-router-dom
 import "./topbar.css";
 import hamburgerIcon from "../assets/Hamburger_icon.svg.png";
 
@@ -28,10 +29,21 @@ export default function Topbar({ onSearchChange }) {
 
       <div className={`topCenter ${menuOpen ? "show" : ""}`}>
         <ul className="topList">
-          <li className="topListItem">Home</li>
-          <li className="topListItem">About</li>
-          <li className="topListItem">Contact</li>
-          <li className="topListItem">Write</li>
+          <li className="topListItem">
+            <Link to="/" className="topLink">Home</Link>
+          </li>
+          <li className="topListItem">
+            <Link to="/Contact" className="topLink">About</Link>
+          </li>
+          <li className="topListItem">
+            <Link to="/Contact" className="topLink">Contact</Link>
+          </li>
+          <li className="topListItem">
+            <Link to="/ServicePolicy" className="topLink">Policies</Link>
+          </li>
+          <li className="topListItem">
+            <Link to="/\Services" className="topLink">Services</Link>
+          </li>
         </ul>
       </div>
 

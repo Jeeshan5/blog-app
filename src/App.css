@@ -1,0 +1,6 @@
+.mainContent {
+    display: flex;
+    flex-direction: column; /* Important: stacks children vertically */
+    align-items: center;
+    width: 100%;
+}

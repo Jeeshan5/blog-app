@@ -1,0 +1,224 @@
+/* General Container for Service and Privacy Policy Sections */
+.service-policy-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #121212; /* Slightly darker background for contrast */
+  color: #eaeaea;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.6);
+  width: 95%;
+  max-width: 900px;
+  margin: 50px auto;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.service-policy-container:hover {
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.7);
+  transform: translateY(-5px);
+}
+
+/* Toggle Button */
+.toggle-button {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #444;
+  padding: 12px 30px;
+  margin: 15px 0;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 6px;
+  text-transform: uppercase;
+  transition: background-color 0.3s, transform 0.3s ease, color 0.3s;
+}
+
+.toggle-button:hover {
+  background-color: #444;
+  color: rgb(0, 149, 255);
+  transform: scale(1.05);
+}
+
+.toggle-button:focus {
+  outline: none;
+}
+
+/* Service and Refund Policy Sections */
+.service-policy, .refund-policy ,.privacy-policy {
+  background-color: #1f1f1f;
+  border-radius: 10px;
+  padding: 30px;
+  margin-top: 40px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+}
+
+.service-policy:hover, .refund-policy:hover {
+  background-color: #282828;
+}
+
+.service-policy h1, .refund-policy h1 {
+  font-size: 30px;
+  color: #444;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.last-updated {
+  font-style: italic;
+  font-size: 14px;
+  color: #888;
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #555454;
+   border-bottom: 2px solid #555454;
+  padding-bottom: 8px;
+}
+h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+ color: #555454;
+  border-bottom: 2px solid #555454;
+  padding-bottom: 8px;
+}
+
+p {
+  font-size: 17px;
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+ul {
+  margin-left: 25px;
+}
+
+ul li {
+  font-size: 17px;
+  margin: 10px 0;
+  line-height: 1.7;
+}
+
+ul li strong {
+  color: #555454;
+}
+
+/* Privacy Policy Section - Matching the Service Policy */
+.privacy-policy-section {
+  background-color: #1f1f1f;  /* Same background as service-policy */
+  color: #eaeaea;
+  padding: 30px;
+  border-radius: 10px;
+  margin: 40px auto;
+  max-width: 900px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.6);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.privacy-policy-section:hover {
+  background-color: #282828;
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.7);
+  transform: translateY(-5px);
+}
+
+.privacy-policy-title {
+  font-size: 30px;  /* Matching the Terms and Refund Policy headings */
+  color: #555454;
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.last-updated {
+  font-style: italic;
+  font-size: 14px;
+  color: #888;
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.privacy-policy-content {
+  font-size: 17px;
+  color: #d3d3d3;
+  line-height: 1.7;
+}
+
+.privacy-policy-content h3 {
+  font-size: 22px;
+  color: #555454;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #555454;
+  padding-bottom: 8px;
+}
+
+.privacy-policy-content p,
+.privacy-policy-content ul {
+  margin: 15px 0;
+  line-height: 1.7;
+}
+
+.privacy-policy-content ul {
+  list-style-type: disc;
+  margin-left: 25px;
+}
+
+.privacy-policy-content ul li {
+  margin: 10px 0;
+}
+
+.privacy-policy-content strong {
+ color: #555454;
+  font-weight: bold;
+}
+
+/* Styling for Links and Buttons Inside Privacy Policy */
+.privacy-policy-content a {
+  color: #555454;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.privacy-policy-content a:hover {
+  color: #555454;
+  text-decoration: underline;
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+  .service-policy-container {
+    padding: 20px;
+  }
+
+  .toggle-button {
+    font-size: 16px;
+    padding: 10px 22px;
+  }
+
+  .service-policy, .refund-policy, .privacy-policy-section {
+    padding: 20px;
+  }
+
+  .service-policy h1, .refund-policy h1, .privacy-policy-title {
+    font-size: 24px;
+  }
+
+  .privacy-policy-content {
+    font-size: 1rem;
+  }
+
+  .privacy-policy-content h3 {
+    font-size: 1.6rem;
+  }
+}
