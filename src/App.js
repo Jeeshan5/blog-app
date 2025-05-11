@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Topbar from "./topbar/Topbar";
-import Home from "./pages/home/Home";
+
 import About from "./header/Header";
 import Contact from "./contact/Contact";
 import Posts  from "./post/Post";
@@ -26,7 +26,7 @@ function App() {
       <section id="posts">
         <Posts />
       </section>
-      
+
         {/* Services Section */}
       <section id="services">
         <Services />

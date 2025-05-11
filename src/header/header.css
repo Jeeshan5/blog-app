@@ -1,57 +1,96 @@
-
-  
-  .headerTitles {
+.headerTitles {
     display: flex;
     flex-direction: column;
     align-items: center;
     font-family: "Lora", serif;
     color: #444;
-  }
-  
-  
-  
-  .headerTitleLg {
+    margin-top: -10px;
+}
+
+.headerTitleLg {
     position: absolute;
-    top: 10%; 
+    top: 7%;
     font-size: 100px;
-    z-index: 1; 
-  }
-  
-  .headerImg {
+    z-index: 1;
+}
+
+.headerImg {
     width: 100%;
     height: 100%;
-    object-position: center top; 
+    object-position: center top;
     transform: translateY(-10%);
-    object-fit:contain;
-    
-  }
-  .headerTyping {
-  font-size: 30px;
- 
-  
-  position: relative;
-  z-index: 3;
-  font-family: "Lora";
-   
+    object-fit: contain;
+}
+
+.headerTyping {
+    font-size: 30px;
+    position: relative;
+    z-index: 3;
+    font-family: "Lora";
     font-weight: 300;
     color: #444;
-    margin-top: 70px;
-  
+    margin-top: 60px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
 }
 
 .headerSubtitle {
-  color: white;
-  font-size: 20px;
-  font-family: "Josefin Sans", sans-serif;
-  text-align: center;
-  line-height: 1.5;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-  position: absolute;
-  margin-top: 300px;
-  width: 100%; 
-  left: 0;
-  transform: none; 
-  z-index: 3;
-  padding: 0 20px; 
-  box-sizing: border-box; }
+    color: white;
+    font-size: 20px;
+    font-family: "Josefin Sans", sans-serif;
+    text-align: center;
+    line-height: 1.5;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    margin-top: 300px;
+    width: 100%;
+    left: 0;
+    transform: none;
+    z-index: 3;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Small screen adjustments (mobile devices) */
+@media screen and (max-width: 768px) {
+    .headerTitleLg {
+        font-size: 50px; /* Smaller font size */
+        top: 15%; /* Adjusted position */
+    }
+
+    .headerImg {
+        transform: translateY(0); /* Remove vertical adjustment */
+        object-fit: cover; /* Better for mobile */
+        height: 60vh; /* Adjusted height */
+    }
+
+    .headerTyping {
+        font-size: 20px; /* Smaller font */
+        margin-top: 100px; /* Less margin */
+    }
+
+    .headerSubtitle {
+        font-size: 16px; /* Smaller font */
+        margin-top: 300px; /* Higher position */
+        padding: 0 15px; /* Less padding */
+        line-height: 1.3; /* Tighter line spacing */
+    }
+}
+
+/* Extra small screens (phones) */
+@media screen and (max-width: 480px) {
+    .headerTitleLg {
+        font-size: 36px; /* Even smaller */
+        top: 20%; /* Higher position */
+    }
+
+    .headerTyping {
+        font-size: 16px;
+        margin-top: 20px;
+    }
+
+    .headerSubtitle {
+        font-size: 14px;
+        margin-top: 150px;
+        padding: 0 10px;
+    }
+}
