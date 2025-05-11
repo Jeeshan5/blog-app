@@ -84,13 +84,13 @@
     }
 
     .headerTyping {
-        font-size: 16px;
-        margin-top: 20px;
+        font-size: 19px;
+        margin-top: 35px;
     }
 
     .headerSubtitle {
-        font-size: 14px;
-        margin-top: 150px;
+        font-size: 16px;
+        margin-top: 300px;
         padding: 0 10px;
     }
 }
