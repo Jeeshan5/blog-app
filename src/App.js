@@ -1,27 +1,49 @@
 import React, { useState } from "react";
-import Home from "./pages/home/Home";
-import Post from "./post/Post";
 import Topbar from "./topbar/Topbar";
+import Home from "./pages/home/Home";
+import About from "./header/Header";
 import Contact from "./contact/Contact";
+import Posts  from "./post/Post";
 import Services from "./Services/Services";
-import ServicePolicy from "./ServicePolicy/ServicePolicy"; // <-- Import the component
+import ServicePolicy from "./ServicePolicy/ServicePolicy";
 import "./App.css";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
 
   return (
-    <>
+    <div className="app-container">
       <Topbar onSearchChange={setSearchTerm} />
-      <Home />
-      <div className="mainContent">
-        {/* <Sidebar /> */}
-        <Post searchTerm={searchTerm} />
+      
+    
+      
+      {/* About Section */}
+      <section id="home">
+        <About />
+      </section>
+      
+      {/* Posts Section */}
+      <section id="posts">
+        <Posts />
+      </section>
+      
+        {/* Services Section */}
+      <section id="services">
         <Services />
+      </section>
+      
+      {/* Contact Section */}
+      <section id="contact">
         <Contact />
-        <ServicePolicy /> {/* <-- Add the ServicePolicy component here */}
-      </div>
-    </>
+      </section>
+      
+      {/* Policy Section */}
+      <section id="policy">
+        <ServicePolicy />
+      </section>
+      
+    
+    </div>
   );
 }
 

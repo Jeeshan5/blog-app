@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom"; // <-- Import Link from react-router-dom
+import { useState, useEffect } from "react";
+import { Link } from "react-scroll";
 import "./topbar.css";
 import hamburgerIcon from "../assets/Hamburger_icon.svg.png";
 
@@ -7,15 +7,34 @@ export default function Topbar({ onSearchChange }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [searchValue, setSearchValue] = useState("");
+  const [scrolled, setScrolled] = useState(false);
+
+  // Handle scroll event to collapse menu
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+      if (window.scrollY > 50) {
+        setMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleSearchChange = (e) => {
     const value = e.target.value;
     setSearchValue(value);
-    onSearchChange(value); // send input to App
+    onSearchChange(value);
+  };
+
+  const handleLinkClick = () => {
+    setMenuOpen(false);
+    setShowSearch(false);
   };
 
   return (
-    <div className="top">
+    <div className={`top ${scrolled ? "scrolled" : ""}`}>
       <div className="topLeft">
         <i className="topIcon fa-brands fa-facebook"></i>
         <i className="topIcon fa-brands fa-x-twitter"></i>
@@ -29,20 +48,71 @@ export default function Topbar({ onSearchChange }) {
 
       <div className={`topCenter ${menuOpen ? "show" : ""}`}>
         <ul className="topList">
-          <li className="topListItem">
-            <Link to="/" className="topLink">Home</Link>
+          <li className="topListItem" onClick={handleLinkClick}>
+            <Link 
+              to="home" 
+              smooth={true} 
+              duration={500} 
+              className="topLink"
+              offset={-80}
+            >
+              Home
+            </Link>
           </li>
-          <li className="topListItem">
-            <Link to="/Contact" className="topLink">About</Link>
+          <li className="topListItem" onClick={handleLinkClick}>
+            <Link 
+              to="header" 
+              smooth={true} 
+              duration={500} 
+              className="topLink"
+              offset={-80}
+            >
+              About
+            </Link>
           </li>
-          <li className="topListItem">
-            <Link to="/Contact" className="topLink">Contact</Link>
+          <li className="topListItem" onClick={handleLinkClick}>
+            <Link 
+              to="contact" 
+              smooth={true} 
+              duration={500} 
+              className="topLink"
+              offset={-80}
+            >
+              Contact
+            </Link>
           </li>
-          <li className="topListItem">
-            <Link to="/ServicePolicy" className="topLink">Policies</Link>
+          <li className="topListItem" onClick={handleLinkClick}>
+            <Link 
+              to="posts" 
+              smooth={true} 
+              duration={500} 
+              className="topLink"
+              offset={-80}
+            >
+              Posts
+            </Link>
           </li>
-          <li className="topListItem">
-            <Link to="/\Services" className="topLink">Services</Link>
+          <li className="topListItem" onClick={handleLinkClick}>
+            <Link 
+              to="policy" 
+              smooth={true} 
+              duration={500} 
+              className="topLink"
+              offset={-80}
+            >
+              Policies
+            </Link>
+          </li>
+          <li className="topListItem" onClick={handleLinkClick}>
+            <Link 
+              to="services" 
+              smooth={true} 
+              duration={500} 
+              className="topLink"
+              offset={-80}
+            >
+              Services
+            </Link>
           </li>
         </ul>
       </div>
