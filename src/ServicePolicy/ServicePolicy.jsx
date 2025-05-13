@@ -8,14 +8,14 @@ const ServicePolicy = () => {
 
   const toggleTerms = () => {
     setShowTerms((prev) => !prev);
-    if (showRefund) setShowRefund(false); // Hide Refund when Terms is shown
-    if (showPrivacy) setShowPrivacy(false); // Hide Privacy when Terms is shown
+    if (showRefund) setShowRefund(false); 
+    if (showPrivacy) setShowPrivacy(false); 
   };
 
   const toggleRefund = () => {
     setShowRefund((prev) => !prev);
-    if (showTerms) setShowTerms(false); // Hide Terms when Refund is shown
-    if (showPrivacy) setShowPrivacy(false); // Hide Privacy when Refund is shown
+    if (showTerms) setShowTerms(false); 
+    if (showPrivacy) setShowPrivacy(false); 
   };
 
   const togglePrivacy = () => {
@@ -227,7 +227,10 @@ const ServicePolicy = () => {
                Click72 <br />
               [Your Contact Information]<br />
               {process.env.REACT_APP_EMAIL} <br />
-           
+          <a href={`tel:${process.env.REACT_APP_CONTACT}`}>
+  Call Us: {process.env.REACT_APP_CONTACT}
+</a>
+
             </p>
           </section>
           
@@ -301,7 +304,10 @@ const ServicePolicy = () => {
                Click72 <br />
               [Your Contact Information] <br />
             {process.env.REACT_APP_EMAIL} <br />
-           {process.env.REACT_APP_CONTACT} 
+          <a href={`tel:${process.env.REACT_APP_CONTACT}`}>
+  Call Us: {process.env.REACT_APP_CONTACT}
+</a>
+
             </p>
           </section>
         </div>
@@ -398,7 +404,10 @@ const ServicePolicy = () => {
       <h3>11. Contact Us</h3>
       <p>If you have any questions or concerns about this Privacy Policy, or if you wish to exercise your privacy rights, please contact us at:</p>
       <p>Click72<br />[Your Contact Address]<br /> {process.env.REACT_APP_EMAIL} <br />
-           {process.env.REACT_APP_CONTACT}</p>
+       <a href={`tel:${process.env.REACT_APP_CONTACT}`}>
+  Call Us: {process.env.REACT_APP_CONTACT}
+</a>
+</p>
     </section>
         </div>
       )}
