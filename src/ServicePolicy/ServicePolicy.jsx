@@ -49,9 +49,9 @@ const ServicePolicy = () => {
            </section>
            <section>
             <p>
-              Welcome to [Your Company Name] ("we," "our," "us"). These Terms of
-              Service ("Terms") govern your access to and use of our website,
-              services, and products (collectively referred to as the "Services").
+              Welcome to Click72. These Terms of
+              Service  govern your access to and use of our website,
+              services, and products 
               By using or accessing our Services, you agree to be bound by these
               Terms. If you do not agree with any part of these Terms, you must
               refrain from using our Services.
@@ -106,7 +106,7 @@ const ServicePolicy = () => {
             <h3>5. Intellectual Property</h3>
             <p>
               All content, trademarks, logos, graphics, and software on the Services
-              are the property of [Your Company Name] or its licensors. You are granted
+              are the property of <h1>Click72 </h1>or its licensors. You are granted
               a limited, non-exclusive, non-transferable license to access and use
               the Services for personal or commercial purposes, subject to these
               Terms. You may not reproduce, distribute, or create derivative works of
@@ -126,8 +126,8 @@ const ServicePolicy = () => {
             <h3>7. User-Generated Content</h3>
             <p>
               If you submit or post any content to our Services, including but not
-              limited to comments, reviews, or feedback ("User Content"), you grant
-              [Your Company Name] a worldwide, royalty-free, sublicensable, and
+              limited to comments, reviews, or feedback , you grant
+              Click72 a worldwide, royalty-free, sublicensable, and
               transferable license to use, copy, modify, distribute, and display the
               User Content in connection with the Services. You are responsible for
               the content you submit, and you represent and warrant that you have all
@@ -139,7 +139,7 @@ const ServicePolicy = () => {
             <h3>8. Third-Party Links</h3>
             <p>
               Our Services may contain links to third-party websites or services that
-              are not owned or controlled by [Your Company Name]. We are not
+              are not owned or controlled by  Click72. We are not
               responsible for the content or practices of these third-party sites, and
               we encourage you to review their respective privacy policies and terms.
             </p>
@@ -159,7 +159,7 @@ const ServicePolicy = () => {
           <section>
             <h3>10. Limitation of Liability</h3>
             <p>
-              To the fullest extent permitted by law, [Your Company Name] shall not be
+              To the fullest extent permitted by law,  Click72 shall not be
               liable for any indirect, incidental, special, consequential, or punitive
               damages arising out of or in connection with your use of the Services,
               even if we have been advised of the possibility of such damages. Our
@@ -172,7 +172,7 @@ const ServicePolicy = () => {
           <section>
             <h3>11. Indemnification</h3>
             <p>
-              You agree to indemnify, defend, and hold harmless [Your Company Name],
+              You agree to indentify, defend, and hold harmless  Click72 and
               its affiliates, and their respective officers, directors, employees, and
               agents from any and all claims, liabilities, damages, losses, and
               expenses (including legal fees) arising out of or in connection with your
@@ -196,9 +196,9 @@ const ServicePolicy = () => {
             <h3>13. Governing Law</h3>
             <p>
               These Terms will be governed by and construed in accordance with the laws
-              of [Your Country/State], without regard to its conflict of law
+              of India/West Bengal, without regard to its conflict of law
               principles. Any disputes arising from or in connection with these Terms
-              will be resolved exclusively in the courts located in [Your City/State],
+              will be resolved exclusively in the courts located in [Kolkata/West Bengal],
               and you consent to the jurisdiction of such courts.
             </p>
           </section>
@@ -216,7 +216,7 @@ const ServicePolicy = () => {
             <p>
               These Terms, along with our Privacy Policy and any other legal notices
               published on our Services, constitute the entire agreement between you
-              and [Your Company Name] regarding your use of the Services.
+              and  Click72 regarding your use of the Services.
             </p>
           </section>
 
@@ -224,9 +224,10 @@ const ServicePolicy = () => {
             <h3>16. Contact Information</h3>
             <p>
               If you have any questions or concerns about these Terms, please contact us at:<br />
-              [Your Company Name]<br />
+               Click72 <br />
               [Your Contact Information]<br />
-              [Your Email Address]
+              {process.env.REACT_APP_EMAIL} <br />
+           
             </p>
           </section>
           
@@ -273,7 +274,8 @@ const ServicePolicy = () => {
 
           <section>
             <h2>3. Refund Process</h2>
-            <p>To request a refund, please contact us at [Your Contact Email/Phone Number] within 24 hours of your appointment.</p>
+            <p>To request a refund, please contact us at  {process.env.REACT_APP_EMAIL} <br />
+           <a>{process.env.REACT_APP_CONTACT}</a> within 24 hours of your appointment.</p>
             <p>Upon reviewing your request, we may require additional information such as photos or descriptions of the issue.</p>
             <p>If your refund request is approved, we will process the refund to your original payment method.</p>
           </section>
@@ -296,10 +298,10 @@ const ServicePolicy = () => {
             <h2>6. Contact Information</h2>
             <p>If you have any questions or concerns about this Refund Policy or wish to request a refund, please contact us at:</p>
             <p>
-              [Your Company Name] <br />
+               Click72 <br />
               [Your Contact Information] <br />
-              [Your Email Address] <br />
-              [Your Phone Number]
+            {process.env.REACT_APP_EMAIL} <br />
+           {process.env.REACT_APP_CONTACT} 
             </p>
           </section>
         </div>
@@ -384,7 +386,7 @@ const ServicePolicy = () => {
 
     <section>
       <h3>9. International Transfers</h3>
-      <p>If you are accessing our website or services from outside of [Your Country], please be aware that your information may be transferred to and processed in a country that may have different data protection laws. By using our services, you consent to the transfer of your personal information to countries outside of your own.</p>
+      <p>If you are accessing our website or services from outside of India, please be aware that your information may be transferred to and processed in a country that may have different data protection laws. By using our services, you consent to the transfer of your personal information to countries outside of your own.</p>
     </section>
 
     <section>
@@ -395,7 +397,8 @@ const ServicePolicy = () => {
     <section>
       <h3>11. Contact Us</h3>
       <p>If you have any questions or concerns about this Privacy Policy, or if you wish to exercise your privacy rights, please contact us at:</p>
-      <p>[Your Company Name]<br />[Your Contact Address]<br />[Your Email Address]<br />[Your Phone Number]</p>
+      <p>Click72<br />[Your Contact Address]<br /> {process.env.REACT_APP_EMAIL} <br />
+           {process.env.REACT_APP_CONTACT}</p>
     </section>
         </div>
       )}
