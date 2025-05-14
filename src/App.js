@@ -6,6 +6,7 @@ import Contact from "./contact/Contact";
 import Posts  from "./post/Post";
 import Services from "./Services/Services";
 import ServicePolicy from "./ServicePolicy/ServicePolicy";
+import Footer from "./footer/Footer";
 import "./App.css";
 
 function App() {
@@ -42,7 +43,7 @@ function App() {
         <ServicePolicy />
       </section>
       
-    
+    <Footer />
     </div>
   );
 }

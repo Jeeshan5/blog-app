@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 import "./topbar.css";
+import icon from "../assets/icon.png";
 import hamburgerIcon from "../assets/Hamburger_icon.svg.png";
 
 export default function Topbar({ onSearchChange }) {
@@ -127,7 +128,7 @@ export default function Topbar({ onSearchChange }) {
             className="searchInput"
           />
         )}
-        <img className="topImg" src="" alt="profile" />
+         <img className="topImg" src={icon} alt="profile" />
         <i
           className="topSearchIcon fa-solid fa-magnifying-glass"
           onClick={() => setShowSearch(!showSearch)}

@@ -1,15 +1,17 @@
 .contactContainer {
-    background-color: #121212;
-    color: #ffffff;
-    padding: 40px 20px;
-    max-width: 600px;
-    margin: 0 auto;
-    margin-top: -100px; 
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    margin-top: 0;
-  }
-  
+  background-color: #121212;
+  color: #ffffff;
+  padding: 40px 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: -100px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  margin-top: 0;
+
+  width: 100%; 
+}
+
   .contactTitle {
     text-align: center;
     font-size: 2rem;
@@ -68,4 +70,47 @@
     color: #bbbbbb;
   }
   
-  
+  .contactWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.logoSection {
+  display: none; /* Hidden by default */
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+  .contactWrapper {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  .contactContainer {
+    margin: 0;
+    max-width: 550px;
+    width: 100%;
+    margin-left: -20px;
+  }
+
+  .logoSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    width: 300px;
+  }
+
+ .contactLogo {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-left: 20px;
+}
+
+}

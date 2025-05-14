@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 // import emailjs from "@emailjs/browser";
 import "./contact.css";
+import icon from "../assets/icon.png";
 
 const Contact = () => {
   const formRef = useRef();
@@ -50,50 +51,58 @@ const Contact = () => {
   };
 
   return (
-    <div className="contactContainer">
-      <p className="contactSubtitle">
-        Search with ‘Digital Marketing Near Me’ and Find Us
-      </p>
-      <h2 className="contactTitle">Contact Me</h2>
-      <form ref={formRef} onSubmit={handleSubmit} className="contactForm">
-        <label>
-          <span>Your Name</span>
-          <input
-            type="text"
-            name="name"
-            value={form.name}
-            onChange={handleChange}
-            placeholder="Enter your name"
-            required
-          />
-        </label>
-        <label>
-          <span>Your Email</span>
-          <input
-            type="email"
-            name="email"
-            value={form.email}
-            onChange={handleChange}
-            placeholder="Enter your email"
-            required
-          />
-        </label>
-        <label>
-          <span>Your Message</span>
-          <textarea
-            rows="6"
-            name="message"
-            value={form.message}
-            onChange={handleChange}
-            placeholder="Write your message here"
-            required
-          />
-        </label>
-        <button type="submit" className="submitBtn">
-          {loading ? "Sending..." : "Send"}
-        </button>
-      </form>
-    </div>
+   <div className="contactWrapper">
+  <div className="contactContainer">
+    <p className="contactSubtitle">
+      Search with ‘Digital Marketing Near Me’ and Find Us
+    </p>
+    <h2 className="contactTitle">Contact Me</h2>
+    <form ref={formRef} onSubmit={handleSubmit} className="contactForm">
+      <label>
+        <span>Your Name</span>
+        <input
+          type="text"
+          name="name"
+          value={form.name}
+          onChange={handleChange}
+          placeholder="Enter your name"
+          required
+        />
+      </label>
+      <label>
+        <span>Your Email</span>
+        <input
+          type="email"
+          name="email"
+          value={form.email}
+          onChange={handleChange}
+          placeholder="Enter your email"
+          required
+        />
+      </label>
+      <label>
+        <span>Your Message</span>
+        <textarea
+          rows="6"
+          name="message"
+          value={form.message}
+          onChange={handleChange}
+          placeholder="Write your message here"
+          required
+        />
+      </label>
+      <button type="submit" className="submitBtn">
+        {loading ? "Sending..." : "Send"}
+      </button>
+    </form>
+  </div>
+
+  {/* Logo shown only on large screens */}
+  <div className="logoSection">
+    <img src={icon} alt="Logo" className="contactLogo" />
+  </div>
+</div>
+
   );
 };
 
